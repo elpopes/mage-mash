@@ -23,7 +23,7 @@ export default {
 }
 
 .banner {
-    font-size: 5vw; /* This will resize the font based on the width of the viewport */
+    font-size: 15vw; /* This will resize the font based on the width of the viewport */
 }
 
 .start-btn {
