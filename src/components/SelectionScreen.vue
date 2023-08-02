@@ -35,3 +35,32 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.bench {
+  display: flex;
+  width: 100%;
+  height: 200px;
+  border-radius: 50px;
+  background-color: #ccc;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.selection-area {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 200px;
+  margin-bottom: 30px;
+}
+
+.ready-button {
+  display: block;
+  margin: auto;
+  padding: 10px 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+</style>

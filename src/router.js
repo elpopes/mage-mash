@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
 import HomePage from "./components/HomePage.vue";
+import SelectionScreen from "./components/SelectionScreen.vue";
 
 Vue.use(Router);
 
@@ -13,6 +14,11 @@ export default new Router({
       name: "home",
       component: HomePage,
     },
-    // Additional routes go here
+    // Additional routes
+    {
+      path: "/selection",
+      name: "selection",
+      component: SelectionScreen,
+    },
   ],
 });
