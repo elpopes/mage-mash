@@ -4,7 +4,7 @@
             <div class="line1">MAGE</div>
             <div class="line2">MASH</div>
         </div>
-        <button class="start-btn">Start</button>
+        <button class="start-btn" @click="startGame">Start</button>
     </div>
 </template>
 
