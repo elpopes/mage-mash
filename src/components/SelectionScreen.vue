@@ -1,21 +1,18 @@
 <template>
     <div>
-      <Draggable v-model="cards" class="bench">
-        <div v-for="card in cards" :key="card">
-          <component :is="card" />
+      <div class="bench">
+        <div v-for="card in cards" :key="card.name">
+          <component :is="card.component" />
         </div>
-      </Draggable>
+      </div>
       <div class="selection-area">
         <!-- The player's selections -->
       </div>
       <button class="ready-button">Ready!</button>
     </div>
 </template>
-  
 
 <script>
-import Draggable from 'vuedraggable';
-
 import GreenPanda from './GreenPanda.vue';
 import BlueBird from './BlueBird.vue';
 import PurpleSnake from './PurpleSnake.vue';
@@ -23,18 +20,22 @@ import PurpleSnake from './PurpleSnake.vue';
 export default {
   name: 'SelectionScreen',
   components: {
-    Draggable,
     GreenPanda,
     BlueBird,
     PurpleSnake
   },
   data() {
     return {
-      cards: ['GreenPanda', 'BlueBird', 'PurpleSnake'],
+      cards: [
+        { name: 'GreenPanda', component: GreenPanda },
+        { name: 'BlueBird', component: BlueBird },
+        { name: 'PurpleSnake', component: PurpleSnake }
+      ],
     };
   }
 };
 </script>
+
 
 <style scoped>
 .bench {
