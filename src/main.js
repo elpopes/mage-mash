@@ -8,8 +8,8 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     { path: "/", component: HomePage, name: "home" },
-    { path: "/selection", component: SelectionScreen, name: "selection" },
+    { path: "/selection", component: SelectionScreen, name: "SelectionScreen" },
   ],
 });
 
-createApp(App).user(router).mount("#app");
+createApp(App).use(router).mount("#app");
