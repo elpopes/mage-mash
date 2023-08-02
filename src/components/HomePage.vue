@@ -1,9 +1,13 @@
 <template>
     <div class="home">
-        <div class="banner">MAGE<br>MASH</div>
+        <div class="banner">
+            <div class="line1">MAGE</div>
+            <div class="line2">MASH</div>
+        </div>
         <button class="start-btn">Start</button>
     </div>
 </template>
+
 
 <script>
 export default {
@@ -23,7 +27,11 @@ export default {
 }
 
 .banner {
-    font-size: 15vw; /* This will resize the font based on the width of the viewport */
+    font-size: 15vw;
+}
+
+.banner .line1, .banner .line2 {
+    line-height: 0.75;  
 }
 
 .start-btn {
