@@ -15,15 +15,15 @@
   
   <script>
   export default {
-    name: 'BlueBird',
+    name: 'PurpleSnake',
     data() {
       return {
-        name: 'Blue Bird',
-        type: 'Air',
-        hp: 80,
+        name: 'Purple Snake',
+        type: 'Poison',
+        hp: 90,
         moves: [
-          { name: 'Sleep Spell', type: 'Control', effect: 'Sleep' },
-          { name: 'Inspire', type: 'Support', effect: 'Boost' }
+          { name: 'Quick Strike', type: 'Offense', damage: 'variable' },
+          { name: 'Venom Strike', type: 'Offense', damage: 'constant', effect: 'Poison' }
         ]
       }
     }
