@@ -8,13 +8,12 @@
     </div>
 </template>
 
-
 <script>
 export default {
     name: 'HomePage',
     methods: {
         startGame() {
-            this.$router.push('/selection');
+            this.$router.push({ name: 'SelectionScreen' });
         }
     }
 }
