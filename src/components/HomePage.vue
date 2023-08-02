@@ -11,7 +11,12 @@
 
 <script>
 export default {
-    name: 'HomePage'
+    name: 'HomePage',
+    methods: {
+        startGame() {
+            this.$router.push('/selection');
+        }
+    }
 }
 </script>
 
