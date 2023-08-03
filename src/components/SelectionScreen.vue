@@ -1,14 +1,16 @@
 <template>
     <div>
-      <div class="bench">
-        <div v-for="card in cards" :key="card.name">
-          <component :is="card.component" />
+        <div class="bench">
+            <div v-for="card in bench" :key="card.name">
+                <component :is="card.component" />
+            </div>
         </div>
-      </div>
-      <div class="selection-area">
-        <!-- The player's selections -->
-      </div>
-      <button class="ready-button">Ready!</button>
+        <div class="selection-area">
+            <div v-for="card in cards" :key="card.name" @click="selectCard(card)">
+                <component :is="card.component" />
+            </div>
+        </div>
+        <button class="ready-button">Ready!</button>
     </div>
 </template>
 
@@ -18,21 +20,28 @@ import BlueBird from './BlueBird.vue';
 import PurpleSnake from './PurpleSnake.vue';
 
 export default {
-  name: 'SelectionScreen',
-  components: {
-    GreenPanda,
-    BlueBird,
-    PurpleSnake
-  },
-  data() {
-    return {
-      cards: [
-        { name: 'GreenPanda', component: GreenPanda },
-        { name: 'BlueBird', component: BlueBird },
-        { name: 'PurpleSnake', component: PurpleSnake }
-      ],
-    };
-  }
+    name: 'SelectionScreen',
+    components: {
+        GreenPanda,
+        BlueBird,
+        PurpleSnake
+    },
+    data() {
+        return {
+            cards: [
+                { name: 'GreenPanda', component: GreenPanda },
+                { name: 'BlueBird', component: BlueBird },
+                { name: 'PurpleSnake', component: PurpleSnake }
+            ],
+            bench: []
+        };
+    },
+    methods: {
+        selectCard(card) {
+            this.bench.push(card);
+            this.cards = this.cards.filter(c => c.name !== card.name);
+        }
+    }
 };
 </script>
 
