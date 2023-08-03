@@ -1,49 +1,42 @@
 <template>
-    <div>
-        <div class="bench">
-            <div v-for="card in bench" :key="card.name">
-                <component :is="card.component" />
-            </div>
-        </div>
-        <div class="selection-area">
-            <div v-for="card in cards" :key="card.name" @click="selectCard(card)">
-                <component :is="card.component" />
-            </div>
-        </div>
-        <button class="ready-button">Ready!</button>
+    <div class="card" @click="handleClick">
+      <h2>{{ name }}</h2>
+      <ul>
+        <li>Type: {{ type }}</li>
+        <li>HP: {{ hp }}</li>
+        <li>Moves: 
+          <ul>
+            <li v-for="move in moves" :key="move.name">{{ move.name }}</li>
+          </ul>
+        </li>
+      </ul>
     </div>
-</template>
-
-<script>
-import GreenPanda from './GreenPanda.vue';
-import BlueBird from './BlueBird.vue';
-import PurpleSnake from './PurpleSnake.vue';
-
-export default {
-    name: 'SelectionScreen',
-    components: {
-        GreenPanda,
-        BlueBird,
-        PurpleSnake
-    },
-    data() {
-        return {
-            cards: [
-                { name: 'GreenPanda', component: GreenPanda },
-                { name: 'BlueBird', component: BlueBird },
-                { name: 'PurpleSnake', component: PurpleSnake }
-            ],
-            bench: []
-        };
+  </template>
+    
+  <script>
+  export default {
+    name: 'CardClass',
+    props: {
+      name: String,
+      type: String,
+      hp: Number,
+      moves: Array
     },
     methods: {
-        selectCard(card) {
-            this.bench.push(card);
-            this.cards = this.cards.filter(c => c.name !== card.name);
-        }
+      handleClick() {
+        this.$emit('card-clicked', this.name);
+      }
     }
-};
-</script>
+  }
+  </script>
+    
+  <style scoped>
+  .card {
+    border: 1px solid #000;
+    padding: 10px;
+  }
+  </style>
+  
 
 
 <style scoped>
