@@ -84,8 +84,10 @@ export default {
 
 <style scoped>
 .container {
-    position: relative;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh; /* ensure it fills full view height */
 }
 .bench, .selection-area {
     display: flex;
@@ -105,10 +107,6 @@ export default {
     padding: 10px 20px;
     font-size: 24px;
     cursor: pointer;
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
     transition: background-color 0.3s;
 }
 .bench-full {
