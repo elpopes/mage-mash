@@ -27,6 +27,7 @@
 
 <script>
 import CardClass from './CardClass.vue';
+import cards from './AllCards.js'
 
 export default {
     name: 'SelectionScreen',
@@ -35,35 +36,7 @@ export default {
     },
     data() {
         return {
-        cards: [
-          { 
-            name: 'GreenPanda', 
-            type: 'Earth', 
-            hp: 120, 
-            moves: [
-              { name: 'Heal', type: 'Defense', healing: 20 },
-              { name: 'Rage Attack', type: 'Offense', damage: 'variable' }
-            ]
-          },
-          { 
-            name: 'BlueBird', 
-            type: 'Air', 
-            hp: 80, 
-            moves: [
-              { name: 'Sleep Spell', type: 'Control', effect: 'Sleep' },
-              { name: 'Inspire', type: 'Support', effect: 'Boost' }
-            ]
-          },
-          { 
-            name: 'PurpleSnake', 
-            type: 'Poison', 
-            hp: 100, 
-            moves: [
-              { name: 'Poison Bite', type: 'Offense', damage: 30 },
-              { name: 'Shed Skin', type: 'Defense', healing: 'variable' }
-            ]
-          }
-        ],
+        cards: cards,
         bench: []
       };
     },
