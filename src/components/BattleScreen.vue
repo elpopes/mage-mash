@@ -27,7 +27,7 @@
     },
     data() {
         return {
-            playerCard: deepClone(this.$route.params.selectedCard),
+            playerCard: deepClone(this.selectedCard),
             currentBaddie: baddies.level01[Math.floor(Math.random() * baddies.level01.length)]
         };
     },

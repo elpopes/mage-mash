@@ -52,13 +52,14 @@ export default {
             this.cards = this.cards.filter(c => c.name !== card.name);
         },
         goToBattle() {
-    if(this.isBenchFull) {
-        this.$router.push({
-            name: 'battle',
-            params: { selectedCard: this.bench[0] }
-        });
-    }
-}
+            if(this.isBenchFull) {
+                this.$router.push({
+                    name: 'battle',
+                    params: { selectedCard: this.bench[0] } 
+                });
+             }
+        }
+
     }
 };
 </script>

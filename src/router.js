@@ -25,6 +25,7 @@ export default new Router({
       path: "/battle",
       name: "battle",
       component: BattleScreen,
+      props: true,
     },
   ],
 });
