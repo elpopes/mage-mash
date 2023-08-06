@@ -23,18 +23,17 @@
       Card
     },
     props: {
-      selectedCard: Object  // The card selected by the user for battle
+      selectedCard: Object
     },
     data() {
-      return {
-        playerCard: deepClone(this.selectedCard),  // Clone the card for gameplay
-        currentBaddie: baddies.level01[Math.floor(Math.random() * baddies.level01.length)] // Just a random baddie for demo
-      };
+        return {
+            playerCard: deepClone(this.$route.params.selectedCard),
+            currentBaddie: baddies.level01[Math.floor(Math.random() * baddies.level01.length)]
+        };
     },
     methods: {
       attack() {
-        // Example attack logic
-        this.currentBaddie.hp -= 10; // Reducing HP for demonstration
+        this.currentBaddie.hp -= 10;
       }
     }
   };
