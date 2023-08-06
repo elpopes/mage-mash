@@ -21,7 +21,7 @@
                 :moves="card.moves"
             />
         </div>
-        <button class="ready-button" :class="{ 'bench-full': isBenchFull }">Ready!</button>
+        <button class="ready-button" :class="{ 'bench-full': isBenchFull }" @click="goToBattle">Ready!</button>
     </div>
 </template>
 
@@ -52,10 +52,13 @@ export default {
             this.cards = this.cards.filter(c => c.name !== card.name);
         },
         goToBattle() {
-        if(this.isBenchFull) {
-            this.$router.push('/battle');
-        }
+    if(this.isBenchFull) {
+        this.$router.push({
+            name: 'battle',
+            params: { selectedCard: this.bench[0] }
+        });
     }
+}
     }
 };
 </script>
