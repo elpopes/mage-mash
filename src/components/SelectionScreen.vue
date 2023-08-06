@@ -50,7 +50,12 @@ export default {
             const card = this.cards.find(c => c.name === cardName);
             this.bench.push(card);
             this.cards = this.cards.filter(c => c.name !== card.name);
+        },
+        goToBattle() {
+        if(this.isBenchFull) {
+            this.$router.push('/battle');
         }
+    }
     }
 };
 </script>
