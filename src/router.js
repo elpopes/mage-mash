@@ -22,7 +22,7 @@ export default new Router({
       component: SelectionScreen,
     },
     {
-      path: "/battle",
+      path: "/battle/:cardId",
       name: "battle",
       component: BattleScreen,
       props: true,
