@@ -34,8 +34,8 @@
     },
     methods: {
         getCardByName(name) {
-            // Assuming AllCards.js exports an array of cards
-            return cards.find(card => card.name === name);
+            let decodedName = decodeURIComponent(name);
+            return cards.find(card => card.name === decodedName);
         },
         attack() {
             this.currentBaddie.hp -= 10;
