@@ -14,7 +14,7 @@
 
 <script>
 import Card from './CardClass.vue';
-import cards from './AllCards.js';  // Importing the cards data
+import cards from './AllCards.js'; 
 import baddies from './AllBaddies.js';
 
 export default {
@@ -26,15 +26,27 @@ export default {
       cardId: String
     },
     data() {
+      console.log("Initializing data...");
+      const player = this.getCardByName(this.cardId);
+      console.log("Fetched player card: ", player);
+      
+      const baddie = baddies.level01[Math.floor(Math.random() * baddies.level01.length)];
+      console.log("Selected baddie: ", baddie);
+
       return {
-        playerCard: this.getCardByName(this.cardId),
-        currentBaddie: baddies.level01[Math.floor(Math.random() * baddies.level01.length)]
+        playerCard: player,
+        currentBaddie: baddie
       };
+    },
+    created() {
+      console.log("Component created with cardId: ", this.cardId);
     },
     methods: {
         getCardByName(name) {
             let decodedName = decodeURIComponent(name);
-            return cards.find(card => card.name === decodedName);
+            const foundCard = cards.find(card => card.name === decodedName);
+            console.log("Searched for card with name:", decodedName, ". Found:", foundCard);
+            return foundCard;
         },
         attack() {
             this.currentBaddie.hp -= 10;
@@ -42,6 +54,7 @@ export default {
     }
 };
 </script>
+
   
   <style scoped>
   .battle-container {
