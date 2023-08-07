@@ -2,11 +2,19 @@
     <div class="battle-container">
       <div class="player-side">
         <!-- Display Player's Card -->
-        <Card :data="playerCard" />
+        <Card 
+            :name="playerCard.name" 
+            :type="playerCard.type" 
+            :hp="playerCard.hp" 
+            :moves="playerCard.moves" />
       </div>
       <div class="baddie-side">
         <!-- Display Baddie -->
-        <Card :data="currentBaddie" />
+        <Card 
+            :name="currentBaddie.name" 
+            :type="currentBaddie.type" 
+            :hp="currentBaddie.hp" 
+            :moves="currentBaddie.moves" />
       </div>
       <button @click="attack">Attack</button>
     </div>
