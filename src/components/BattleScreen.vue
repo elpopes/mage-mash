@@ -23,7 +23,7 @@
       Card
     },
     props: {
-      selectedCard: Object
+      cardId: String
     },
     data() {
         return {
