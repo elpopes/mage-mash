@@ -10,15 +10,14 @@
       </div>
       <button @click="attack">Attack</button>
     </div>
-  </template>
-  
-  <script>
-  import Card from './Card.vue';
-  import cards from './AllCards.js';
-//   import { deepClone } from './utils.js'; 
-  import baddies from './Baddies.js';
-  
-  export default {
+</template>
+
+<script>
+import Card from './CardClass.vue';
+import cards from './AllCards.js';  // Importing the cards data
+import baddies from './AllBaddies.js';
+
+export default {
     name: 'BattleScreen',
     components: {
       Card
@@ -27,10 +26,10 @@
       cardId: String
     },
     data() {
-    return {
-            playerCard: this.getCardByName(this.cardId),
-            currentBaddie: baddies.level01[Math.floor(Math.random() * baddies.level01.length)]
-        };
+      return {
+        playerCard: this.getCardByName(this.cardId),
+        currentBaddie: baddies.level01[Math.floor(Math.random() * baddies.level01.length)]
+      };
     },
     methods: {
         getCardByName(name) {
@@ -41,9 +40,8 @@
             this.currentBaddie.hp -= 10;
         }
     }
-
-  };
-  </script>
+};
+</script>
   
   <style scoped>
   .battle-container {
