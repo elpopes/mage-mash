@@ -14,7 +14,8 @@
   
   <script>
   import Card from './Card.vue';
-  import { deepClone } from './utils.js'; 
+  import cards from './AllCards.js';
+//   import { deepClone } from './utils.js'; 
   import baddies from './Baddies.js';
   
   export default {
@@ -26,16 +27,21 @@
       cardId: String
     },
     data() {
-        return {
-            playerCard: deepClone(this.selectedCard),
+    return {
+            playerCard: this.getCardByName(this.cardId),
             currentBaddie: baddies.level01[Math.floor(Math.random() * baddies.level01.length)]
         };
     },
     methods: {
-      attack() {
-        this.currentBaddie.hp -= 10;
-      }
+        getCardByName(name) {
+            // Assuming AllCards.js exports an array of cards
+            return cards.find(card => card.name === name);
+        },
+        attack() {
+            this.currentBaddie.hp -= 10;
+        }
     }
+
   };
   </script>
   
