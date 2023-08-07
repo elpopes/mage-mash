@@ -55,10 +55,11 @@ export default {
             if(this.isBenchFull) {
                 this.$router.push({
                     name: 'battle',
-                    params: { selectedCard: this.bench[0] } 
+                    params: { cardId: this.bench[0].name } 
                 });
-             }
-        }
+            }
+}
+
 
     }
 };
